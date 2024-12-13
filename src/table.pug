@@ -1,0 +1,14 @@
+extends template
+
+block nav 
+    nav.nav 
+        h2 
+            span.nav__span #{title}
+        +createMenu(dictMenu,'Топ-50 российских компаний')
+
+block content 
+    content.content
+        +graphSection()
+        +filterSection()
+        +sortSection()
+        +tableComponent(structuresTable)

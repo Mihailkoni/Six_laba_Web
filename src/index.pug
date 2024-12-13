@@ -1,9 +1,22 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
-  body 
-    block header
-    include companents/header
+extends template 
+
+block nav 
+    nav.nav
+        h2
+            span.nav__span #{title} 
+        +createMenu(dictMenu,'Инвестиции в российские компании')
+
+block content
+    content.content
+        div.content__images
+            div.content__images_large-image 
+                img(src = require("./images/first.png"))
+            div.content__images_small-image
+                img(src = require("./images/second.png"))
+            div.content__images_small-image
+                img(src = require("./images/third.png"))
+
+        article.content__article 
+                +createSections(listSections)
+                +table(5, 3, 1)
+                +table(5, 3, 0) 

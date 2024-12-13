@@ -1,0 +1,18 @@
+include C:\Users\Lenovo\Desktop\Six_laba\my_pug\src\companents\data.pug
+include C:\Users\Lenovo\Desktop\Six_laba\my_pug\src\companents\mixin.pug
+
+doctype html
+
+html(lang="ru")
+    head 
+        title #{title}
+    body 
+        block header
+            header.header
+                input.header__input(type= "text", id= "searchField") 
+                span &#128269;
+        block nav 
+        block content 
+        block footer 
+            footer.footer
+                h4.footer__title &copy; Кориков М.Е., группа 6, 2024-2025

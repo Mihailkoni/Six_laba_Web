@@ -1,0 +1,21 @@
+extends template
+
+block nav 
+    nav.nav 
+        h2
+            span.nav__span #{title}
+        +createMenuSberbank(dictMenu, structuresSber[0].menuItem)
+
+block content
+    content.content
+        img.content__sber-image.big(src= require("./images/" + structuresSber[0].pict))
+    
+        section.content__section
+            section.content__section__div
+                div= structuresSber[0].par1
+            section.content__section__div
+                div= structuresSber[0].par2
+            section.content__section__div
+                div= structuresSber[0].par3
+            section.content__section__div
+                div= structuresSber[0].par4

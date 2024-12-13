@@ -1,0 +1,95 @@
+block variables 
+    - var title = 'InvestPro'
+
+    //- элементы меню и название файла
+    -
+        var dictMenu = {
+            'Инвестиции в российские компании': 'index.html',
+            'Топ-50 российских компаний': 'table.html',
+            'Новости': "#"
+        }
+
+    -
+        var listSections = [
+            {
+                'header':'Сбербанк',
+                'image':'sberbank.png',
+                'text':'Сбербанк является крупнейшим банком России и Восточной Европы. Инвестирование в акции Сбербанка может принести стабильные дивиденды, учитывая его доминирующее положение на финансовом рынке России.'
+            },
+            {
+                'header':'Газпром',
+                'image':'gazprom.png',
+                'text':'Газпром является крупнейшей газовой компанией в мире, контролируя значительные запасы природного газа в России.'
+            },
+            {
+                'header':'Яндекс',
+                'image':'yandex.png',
+                'text':'Яндекс — крупнейшая IT-компания России, которая активно развивает свои технологии в области поисковых систем, интернет-рекламы, а также облачных и транспортных сервисов.'
+            } 
+        ]
+            
+    - 
+         var structuresSber = [
+            {
+                menuItem: "Cбербанк",
+                pict: "sberLargeLogo.png",
+
+                par1:"Сбербанк демонстрирует стабильный рост прибыли и акционерной стоимости, а также занимает лидирующие позиции по объемам депозитов и кредитов.",
+                
+                par2:"Банк активно внедряет технологии искусственного интеллекта и цифровые сервисы, что делает его привлекательным для долгосрочных инвестиций.",
+                
+                par3:"Сбербанк предлагает инвесторам регулярные дивиденды с перспективой дальнейшего увеличения их размера по мере роста чистой прибыли.",
+                
+                par4:"Основные риски для инвесторов связаны с возможными экономическими санкциями и волатильностью на российском финансовом рынке."
+                
+            }
+        ]
+
+    -
+        var structuresTable = [
+                { name: "Газпром", sector: "Энергетика", price: 320, change: "-1.2%", index: "IMOEX", capitalization: 8000, pe: 4.5, ps: 1.2 },
+                { name: "Сбербанк", sector: "Финансы", price: 280, change: "-0.5%", index: "IMOEX", capitalization: 7000, pe: 6.2, ps: 2.0 },
+                { name: "Лукойл", sector: "Нефть и газ", price: 4500, change: "-0.3%", index: "IMOEX", capitalization: 5500, pe: 5.0, ps: 1.1 },
+                { name: "Роснефть", sector: "Нефть и газ", price: 520, change: "-0.1%", index: "IMOEX", capitalization: 6000, pe: 6.8, ps: 3.2 },
+                { name: "Магнит", sector: "Ритейл", price: 5100, change: "-1.2%", index: "IMOEX", capitalization: 300, pe: 10.1, ps: 0.5 },
+                { name: "Аэрофлот", sector: "Транспорт", price: 230, change: "+0.1%", index: "IMOEX", capitalization: 700, pe: 7.05, ps: 0.5 },
+                { name: "Татнефть", sector: "Нефть и газ", price: 720, change: "-0.5%", index: "IMOEX", capitalization: 900, pe: 8.0, ps: 3.1 },
+                { name: "ФосАгро", sector: "Химия", price: 4000, change: "+1.0%", index: "IMOEX", capitalization: 700, pe: 9.5, ps: 2.3 },
+                { name: "Сургутнефтегаз", sector: "Нефть и газ", price: 38, change: "-0.7%", index: "IMOEX", capitalization: 1500, pe: 5.0, ps: 1.4 },
+                { name: "Яндекс", sector: "Технологии", price: 5100, change: "+0.2%", index: "IMOEX", capitalization: 2000, pe: 8.0, ps: 4.0 },
+                { name: "ВТБ", sector: "Финансы", price: 0.02, change: "-0.3%", index: "IMOEX", capitalization: 1000, pe: 5.5, ps: 1.2 },
+                { name: "Мосэнерго", sector: "Энергетика", price: 3.7, change: "+0.1%", index: "IMOEX", capitalization: 300, pe: 3.5, ps: 0.4 },
+                { name: "МТС", sector: "Телекоммуникации", price: 300, change: "-0.9%", index: "IMOEX", capitalization: 600, pe: 10.0, ps: 2.5 },
+                { name: "Новатэк", sector: "Нефть и газ", price: 2100, change: "+0.3%", index: "IMOEX", capitalization: 600, pe: 9.8, ps: 2.3 },
+                { name: "АЛРОСА", sector: "Добыча алмазов", price: 70, change: "-0.7%", index: "IMOEX", capitalization: 900, pe: 6.3, ps: 0.6 },
+                { name: "Камаз", sector: "Автомобили", price: 70, change: "-1.7%", index: "IMOEX", capitalization: 70, pe: 5.7, ps: 0.6 },
+                { name: "Полюс", sector: "Металлургия", price: 2100, change: "-0.4%", index: "IMOEX", capitalization: 1600, pe: 5.4, ps: 1.7 },
+                { name: "Северсталь", sector: "Металлургия", price: 1500, change: "-0.1%", index: "IMOEX", capitalization: 400, pe: 6.8, ps: 0.5 },
+                { name: "Энел Россия", sector: "Энергетика", price: 1.2, change: "-0.5%", index: "IMOEX", capitalization: 100, pe: 4.8, ps: 0.9 },
+                { name: "ФСК ЕЭС", sector: "Энергетика", price: 0.1, change: "+0.2%", index: "IMOEX", capitalization: 600, pe: 5.9, ps: 0.4 },
+                { name: "Детский мир", sector: "Ритейл", price: 75, change: "+0.4%", index: "IMOEX", capitalization: 900, pe: 7.5, ps: 1.1 },
+                { name: "ЛСР", sector: "Недвижимость", price: 90, change: "-0.9%", index: "IMOEX", capitalization: 200, pe: 5.2, ps: 0.7 },
+                { name: "ОГК-2", sector: "Энергетика", price: 0.7, change: "+0.3%", index: "IMOEX", capitalization: 200, pe: 4.9, ps: 0.8 },
+                { name: "Российские железные дороги", sector: "Транспорт", price: 1.0, change: "-1.0%", index: "IMOEX", capitalization: 1000, pe: 8.2, ps: 1.4 },
+                { name: "Фармстандарт", sector: "Фармацевтика", price: 700, change: "-0.4%", index: "IMOEX", capitalization: 250, pe: 6.0, ps: 1.3 },
+                { name: "Росгосстрах", sector: "Страхование", price: 50, change: "-0.5%", index: "IMOEX", capitalization: 150, pe: 7.0, ps: 0.9 },
+                { name: "Юнипро", sector: "Энергетика", price: 3.0, change: "-0.6%", index: "IMOEX", capitalization: 1300, pe: 6.9, ps: 1.7 },
+                { name: "Тинькофф Банк", sector: "Финансы", price: 30, change: "+0.6%", index: "IMOEX", capitalization: 300, pe: 5.4, ps: 0.9 },
+                { name: "Мегафон", sector: "Телекоммуникации", price: 280, change: "+0.1%", index: "IMOEX", capitalization: 900, pe: 6.5, ps: 1.2 },
+                { name: "РусГидро", sector: "Энергетика", price: 0.9, change: "-0.4%", index: "IMOEX", capitalization: 500, pe: 5.3, ps: 0.6 },
+                { name: "Ростелеком", sector: "Телекоммуникации", price: 150, change: "+0.2%", index: "IMOEX", capitalization: 800, pe: 7.2, ps: 1.8 },
+                { name: "Белуга", sector: "Пищевая промышленность", price: 2000, change: "+1.2%", index: "IMOEX", capitalization: 150, pe: 9.1, ps: 2.4 },
+                { name: "М.Видео", sector: "Ритейл", price: 500, change: "-0.8%", index: "IMOEX", capitalization: 300, pe: 4.6, ps: 1.5 },
+                { name: "ПИК", sector: "Недвижимость", price: 100, change: "+0.5%", index: "IMOEX", capitalization: 200, pe: 6.2, ps: 1.1 },
+                { name: "Норникель", sector: "Металлургия", price: 17000, change: "-1.1%", index: "IMOEX", capitalization: 2500, pe: 7.0, ps: 1.9 },
+                { name: "Обувь России", sector: "Ритейл", price: 10, change: "+0.6%", index: "IMOEX", capitalization: 20, pe: 4.2, ps: 0.7 },
+                { name: "Башнефть", sector: "Нефть и газ", price: 700, change: "+0.7%", index: "IMOEX", capitalization: 600, pe: 7.2, ps: 1.4 },
+                { name: "Соллерс", sector: "Автомобили", price: 50, change: "-0.9%", index: "IMOEX", capitalization: 100, pe: 5.1, ps: 0.9 },
+                { name: "Балтика", sector: "Пищевая промышленность", price: 70, change: "+1.0%", index: "IMOEX", capitalization: 200, pe: 5.8, ps: 1.0 },
+                { name: "Ренессанс Капитал", sector: "Финансы", price: 150, change: "-0.3%", index: "IMOEX", capitalization: 1000, pe: 6.8, ps: 1.2 },
+                { name: "Русал", sector: "Металлургия", price: 80, change: "-1.4%", index: "IMOEX", capitalization: 200, pe: 5.3, ps: 1.0 },
+                { name: "Аптечная сеть 36.6", sector: "Фармацевтика", price: 150, change: "+0.6%", index: "IMOEX", capitalization: 300, pe: 5.9, ps: 1.4 },
+                { name: "Трансконтейнер", sector: "Транспорт", price: 4200, change: "+0.8%", index: "IMOEX", capitalization: 700, pe: 9.0, ps: 2.0 }
+        ]
+
+    

@@ -1,0 +1,172 @@
+//- формирование меню
+mixin createMenu(menu, active)
+    each value, key in menu 
+        if active == key 
+            a.nav__link.nav__link_active(href= value)= key 
+        else 
+            a.nav__link(href= value)= key 
+
+mixin createSections(list, key)
+    each item, index in list
+        section.content__article_section
+            if index === 0
+                a(href="sberbank.html")
+                    img.content__article_section-image(src=require("./images/" + item.image), alt=item.header)
+                h3.content__article_section-title= item.header
+                p= item.text
+            else
+                img.content__article_section-image(src=require("./images/" + item.image), alt=item.header)
+                h3.content__article_section-title= item.header
+                p= item.text
+
+
+
+//- для формирования меню на странице сбера
+mixin createMenuSberbank (menu, sberItem)
+    each value, key in menu
+        if key == 'Инвестиции в российские компании'
+            a.nav__link(href= value)= key
+            a.nav__link.nav__link_active(href= "sberbank.html")= sberItem
+        else
+            a.nav__link(href= value)= key
+
+
+//- для запонения таблицы
+mixin tableComponent(data)
+  table.content__table
+    thead
+      tr
+        th.content__table__header Название компании
+        th.content__table__header Сектор
+        th.content__table__header Цена акции (₽)
+        th.content__table__header Изменение за день (%)
+        th.content__table__header Биржевой индекс
+        th.content__table__header Капитализация (млрд ₽)
+        th.content__table__header P/E (Price to Earnings)
+        th.content__table__header P/S (Price to Sales)
+    tbody
+      each item in data
+        tr
+          td.content__table__cell= item.name
+          td.content__table__cell= item.sector
+          td.content__table__cell= item.price
+          td.content__table__cell= item.change
+          td.content__table__cell= item.index
+          td.content__table__cell= item.capitalization
+          td.content__table__cell= item.pe
+          td.content__table__cell= item.ps
+
+mixin graphSection()
+    details.content__details
+        summary График 
+        fieldset.content__details__fieldset
+            label.content__details__label
+                input(type="radio" value="price")
+                | Цена акции
+            label.content__details__label
+                input(type="radio" value="capitalization")
+                | Капитализация
+            label.content__details__label
+                input(type="radio" value="pe")
+                | P/E
+            label.content__details__label
+                input(type="radio" value="ps")
+                | P/S
+            label.content__details__label
+                input(type="checkbox" value="min")
+                | Минимальное значение
+            label.content__details__label
+                input(type="checkbox" value="max")
+                | Максимальное значение
+            label.content__details__label
+                input(type="checkbox" value="avg")
+                | Среднее значение
+            button.content__details__button Построить
+            div Здесь будет график
+
+
+mixin filterSection()
+    details.content__details
+        summary Фильтр
+        fieldset.content__details_fieldset
+            label.content__details__label
+                | Название компании:
+                input(type="text" placeholder="Введите название")
+            label.content__details__label
+                | Сектор:
+                input(type="text" placeholder="Введите сектор")
+            label.content__details__label
+                | Биржевой индекс:
+                input(type="text" placeholder="Введите индекс")
+            label.content__details__label
+                | Цена акции: от
+                input(type="number" placeholder="0")
+                | до
+                input(type="number" placeholder="0")
+            label.content__details__label
+                | Капитализация: от
+                input(type="number" placeholder="0")
+                | до
+                input(type="number" placeholder="0")
+            label.content__details__label
+                | P/E: от
+                input(type="number" placeholder="0")
+                | до
+                input(type="number" placeholder="0")
+            label.content__details__label
+                | P/S: от
+                input(type="number" placeholder="0")
+                | до
+                input(type="number" placeholder="0")
+            button.content__details.button Найти
+
+mixin sortSection()
+    details.content__details
+        summary Сортировка
+        fieldset.content__details__fieldset
+            label.content__details__label
+                | Первый уровень:
+                select.content__details__select(name="sort1")
+                    option(value="none") Нет
+                    option(value="price") Цена акции
+                    option(value="capitalization") Капитализация
+                    option(value="pe") P/E
+                    option(value="ps") P/S
+            label.content__details__label
+                input.content__details__input-checkbox(type="checkbox")
+                | по убыванию?
+                label.content__details__label
+                | Второй уровень:
+                select.content__details.select(name="sort2")
+                    option(value="none") Нет
+                    option(value="price") Цена акции
+                    option(value="capitalization") Капитализация
+                    option(value="pe") P/E
+                    option(value="ps") P/S
+            label.content__details__label
+                input.content__details__input-checkbox(type="checkbox")
+                | по убыванию?
+                label.content__details__label
+                | Третий уровень:
+                select.content__details__select(name="sort3")
+                    option(value="none") Нет
+                    option(value="price") Цена акции
+                    option(value="capitalization") Капитализация
+                    option(value="pe") P/E
+                    option(value="ps") P/S
+            label.content__details__label
+                input.details__input-checkbox(type="checkbox")
+                | по убыванию?
+
+
+mixin table(rows, cols, bordered)
+    table.content__table(style="border: 1px solid black;padding: 5px;")
+        each row in Array(rows)
+            tr
+            each col in Array(cols)
+                if bordered
+                    td.content__table__cell(style="border: 1px solid black; padding: 5px;")
+                        | 
+                else
+                    td.content__table__cell(style="border:0;padding: 5px;")
+                        | 
